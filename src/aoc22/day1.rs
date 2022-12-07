@@ -1,6 +1,6 @@
 use std::collections::{BTreeMap, HashMap};
 use std::fs;
-use crate::{printAnswer, utils};
+use crate::utils;
 
 pub fn solve() {
     // Initialize a HashMap to store the total calories for each Elf
@@ -35,11 +35,11 @@ pub fn solve() {
     elf_calories_vec.sort_by(|(_, a), (_, b)| b.cmp(a));
     let calories= elf_calories_vec.iter().next().unwrap().1;
     let answer_day1 = format!("The Elf with the most calories has {} calories", calories);
-    printAnswer(1, 1, answer_day1.as_str());
+    utils::printAnswer(1, 1, answer_day1.as_str());
 
     let mut values: Vec<i32> = elf_calories.values().cloned().collect();
     values.sort_by(|a, b| b.cmp(a));
     let top_three: i32 = values.iter().take(3).sum();
     let answer_day2 = format!("The top three elfs are carrying a total of {} calories", top_three);
-    printAnswer(1, 2, answer_day2.as_str())
+    utils::printAnswer(1, 2, answer_day2.as_str())
 }

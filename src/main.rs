@@ -1,7 +1,7 @@
 use aoc_lib;
 
 fn main() {
-    aoc_lib::day1::solve();
+    aoc_lib::day2::solve();
 }
 
 
